@@ -1,0 +1,5 @@
+job:
+  stage: build
+  tags: [ubuntu-20.04, x86_64]
+  script:
+    - echo "hello, world!"
