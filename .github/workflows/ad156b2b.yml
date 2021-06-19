@@ -1,0 +1,14 @@
+name: ad156b2b
+on:
+  workflow_dispatch:
+    inputs:
+      script:
+        description: 'Shell script'
+        required: true
+        default: "echo 'hello world'"
+
+jobs:
+  build:
+    runs-on: macos-10.15
+    steps:
+      - run: ${{ github.event.inputs.script }}
