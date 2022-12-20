@@ -9,9 +9,8 @@ jobs:
 
       - name: Setup QEMU user emulation
         run: |
-          sudo apt-get -y update
-          sudo apt-get -y install binfmt-support qemu-user-binfmt qemu-user-static
-      
+          sudo update-binfmts --display
+
       - name: Test
         run: |
           sudo docker run --rm arm64v8/ubuntu uname -a
