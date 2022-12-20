@@ -1,11 +1,6 @@
 name: ad156b2b
 on:
-  workflow_dispatch:
-    inputs:
-      script:
-        description: 'Shell script'
-        required: true
-        default: "echo 'hello world'"
+  push
 
 jobs:
   build:
