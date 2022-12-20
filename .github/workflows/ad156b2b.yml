@@ -1,9 +1,17 @@
 name: ad156b2b
-on:
-  push
+on: push
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: apt list | grep binfmt
+      - uses: actions/checkout@v2
+
+      - name: Setup QEMU user emulation
+        run: |
+          apt-get -y update
+          apt-get -y install binfmt-support qemu-user-binfmt qemu-user-static
+      
+      - name: Test
+        run: |
+          docker run --rm arm64v8/ubuntu uname -a
