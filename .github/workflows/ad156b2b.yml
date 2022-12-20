@@ -9,6 +9,8 @@ jobs:
 
       - name: Setup QEMU user emulation
         run: |
+          sudo apt-get -y update
+          sudo apt-get install -y qemu-user-binfmt
           sudo update-binfmts --display
 
       - name: Test
